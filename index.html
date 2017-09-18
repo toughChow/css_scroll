@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="plugins/jquery-3.2.1.min.js"></script>
+    <title>Document</title>
+    <style type="text/css">
+    body {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .panel {
+        margin: 0 auto;
+        width: 600px;
+    }
+
+    .left {
+        overflow: auto;
+        width: 200px;
+        height: 500px;
+        float: left;
+        background-color: green;
+    }
+
+    .right {
+        overflow: auto;
+        width: 200px;
+        height: 500px;
+        float: right;
+
+        /*scrollTop:800;*/
+    }
+
+    .center {
+
+        min-height: 500px;
+        width: 200px;
+        height: 1000px;
+        background: linear-gradient(red, blue);
+    }
+    </style>
+</head>
+
+<body>
+    <div class="panel">
+        <div>
+            <div class="left">
+                <div class="center">
+                </div>
+            </div>
+            <div class="right">
+                <div class="center">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript">
+$(function() {
+
+	function rightFunc(){
+		$('.right').scroll(function() {
+            $('.left').scrollTop($(this).scrollTop());
+        });
+	}
+
+	function leftFunc(){
+		 $('.left').scroll(function() {
+        	$('.right').scrollTop($(this).scrollTop()); 
+        });
+	}
+
+	$('.right').click(function(){
+		$('.left').unbind(leftFunc());
+		$(this).bind(rightFunc());
+	})
+    
+ 
+	$('.left').click(function(){
+		$('.right').unbind(rightFunc());
+		$(this).bind(leftFunc());
+	})
+	
+
+	// $('.panel').on("click",function(){
+	// 	$('.left').unbind(leftFunc());
+	// 	$('.right').unbind(rightFunc());
+	// });
+   
+
+});
+</script>
+
+</html>
