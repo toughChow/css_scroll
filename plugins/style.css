@@ -1,0 +1,44 @@
+ body {
+        margin: 0 auto;
+        width: 100%;
+    }
+
+    .panel {
+        margin: 0 auto;
+        width: 600px;
+        height: 500px;
+    }
+
+    .left {
+        overflow: auto;
+        width: 200px;
+        height: 500px;
+        float: left;
+        background-color: green;
+    }
+
+    .right {
+        overflow: auto;
+        width: 200px;
+        height: 500px;
+        float: right;
+
+        /*scrollTop:800;*/
+    }
+
+    .rightcenter {
+
+        min-height: 500px;
+        width: 200px;
+        height: 1000px;
+        background: linear-gradient(#71FF74, #E96EBE);
+    }
+
+
+      .leftcenter {
+
+        min-height: 500px;
+        width: 200px;
+        height: 1000px;
+        background: linear-gradient(#71FF74, #E96EBE);
+    }
